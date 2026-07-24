@@ -458,6 +458,72 @@
             font-family: "Microsoft YaHei", sans-serif;
         }
 
+        /* 专利卡片网格布局 */
+        .patent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .patent-grid.small {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        }
+
+        /* 专利卡片 */
+        .patent-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 16px;
+            transition: all 0.2s;
+        }
+        .patent-card:hover {
+            box-shadow: 0 4px 16px rgba(37,99,235,0.12);
+            border-color: #93c5fd;
+            transform: translateY(-2px);
+        }
+        .patent-card.key {
+            border: 2px solid #2563eb;
+            background: linear-gradient(135deg, #eff6ff, #f8fafc);
+        }
+        .patent-card .pnum {
+            font-size: 11px;
+            color: #2563eb;
+            font-weight: 700;
+            margin-bottom: 4px;
+            font-family: monospace;
+        }
+        .patent-card .ptitle {
+            font-size: 13px;
+            color: #1e293b;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+        .patent-card .pmeta {
+            font-size: 11.5px;
+            color: #64748b;
+            margin-bottom: 8px;
+        }
+        .patent-card .pdesc {
+            font-size: 12px;
+            color: #475569;
+            margin: 6px 0;
+            padding: 8px 10px;
+            background: #f1f5f9;
+            border-radius: 6px;
+            border-left: 3px solid #2563eb;
+            line-height: 1.6;
+        }
+        .patent-card a {
+            font-size: 11px;
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .patent-card a:hover {
+            text-decoration: underline;
+        }
+
         /* 增强专利卡片 */
         .patent-card-enhanced {
             background: #f8fafc;
@@ -1057,55 +1123,55 @@
                 <h4 style="color: var(--primary); margin: 20px 0 15px;">🎯 重点专利精选</h4>
                 <div class="patent-grid">
                     <!-- 专利卡片1 -->
-                    <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN122158937A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">一种天线、天线系统、通信设备以及通信系统</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card key">
+                        <div class="pnum" >CN122158937A</div>
+                        <div class="ptitle" >一种天线、天线系统、通信设备以及通信系统</div>
+                        <div class="pmeta" >🏢 华为技术有限公司 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>该专利提出了一种多天线系统集成方案，通过在封装基板内嵌入多个天线单元，实现天线阵列与射频芯片的一体化设计。支持Sub-6GHz和毫米波双频段工作，适用于6G大规模MIMO场景。核心创新点在于天线单元间的隔离结构设计，有效降低互耦干扰。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=6bdaf958-220c-4532-8e84-aaca4c5908d0&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=qhkjwzW%2F7JaMbO5mTEA%2Fwx0kgk9vu7akMTtB%2FrxHi78%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片2 -->
-                    <div class="patent-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN122315316A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">一种天线装置及电子设备</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 维沃移动通信有限公司（vivo） | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card">
+                        <div class="pnum" >CN122315316A</div>
+                        <div class="ptitle" >一种天线装置及电子设备</div>
+                        <div class="pmeta" >🏢 维沃移动通信有限公司（vivo） | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>针对手机内部空间受限问题，该专利设计了一种小型化天线装置。采用堆叠式天线结构，将多个频段的天线单元垂直排列，相比传统平面布局节省40%面积。特别优化了天线与金属中框的隔离设计，解决手机金属边框对天线性能的干扰问题。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=fe59843c-ea3f-40a9-8350-7be8c0c855af&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=iIkOLRIqVfvZWll3gmIEj2U%2BctGaT6AbG1h%2B%2FaFVRT8%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片3 -->
-                    <div class="patent-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN121642536A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">具有外壳集成寄生的电子设备天线</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 苹果公司 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card">
+                        <div class="pnum" >CN121642536A</div>
+                        <div class="ptitle" >具有外壳集成寄生的电子设备天线</div>
+                        <div class="pmeta" >🏢 苹果公司 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>苹果的创新思路：把手机金属外壳变成天线的一部分！通过在外壳上设计特定的缝隙和耦合结构，让外壳起到寄生辐射单元的作用。这样既不占用内部空间，又能增加天线的有效面积，提升信号收发效率。这项技术特别适合折叠屏手机的铰链区域天线设计。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=f4c0cc50-1e39-48e0-8ff2-dee98f4128fd&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=QtVsjyYQgQX6%2F4q2INE7pZFstHIke9tLGcHn3XzOf3k%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片4 -->
-                    <div class="patent-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN120637890A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">天线结构及电子设备</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 维沃移动通信有限公司（vivo） | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card">
+                        <div class="pnum" >CN120637890A</div>
+                        <div class="ptitle" >天线结构及电子设备</div>
+                        <div class="pmeta" >🏢 维沃移动通信有限公司（vivo） | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>高集成度天线结构设计，将天线、滤波器、双工器等射频前端组件集成在同一个封装模块内。采用低温共烧陶瓷（LTCC）基板实现多层互连，支持5G/6G双模工作。该设计可减少射频前端占用面积达35%，为手机电池腾出更多空间。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=e934c7ae-e5ac-4c81-99df-fcf2fd0ad3a1&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=Utaw0mYZ4ChLETxP8KAB3BB7%2B2xyFXkfq6jxp0GRnRI%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片5 -->
-                    <div class="patent-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN121460917A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">电子设备</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 维沃移动通信有限公司（vivo） | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card">
+                        <div class="pnum" >CN121460917A</div>
+                        <div class="ptitle" >电子设备</div>
+                        <div class="pmeta" >🏢 维沃移动通信有限公司（vivo） | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>该专利公开了一种电子设备的天线结构设计，重点解决手机内部多天线共存时的干扰问题。通过创新的天线布局策略和去耦网络设计，实现了多天线系统的高隔离度，适用于支持Wi-Fi 7、蓝牙5.4、UWB等多种无线协议的旗舰手机。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=d9617213-ff09-4171-9f80-7228c7d01bc6&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=Z%2BAZCzBju1%2BjAnuh3KT0CciWXEBdOkdPPo00dFe9G%2FY%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
@@ -1171,44 +1237,44 @@
                 <h4 style="color: var(--primary); margin: 20px 0 15px;">🎯 重点专利精选</h4>
                 <div class="patent-grid">
                     <!-- 专利卡片1 -->
-                    <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">US20260155874A1</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">Method and apparatus for performing hybrid beamforming in wireless communication system</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 三星电子株式会社 | 📅 2026年公开</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card key">
+                        <div class="pnum" >US20260155874A1</div>
+                        <div class="ptitle" >Method and apparatus for performing hybrid beamforming in wireless communication system</div>
+                        <div class="pmeta" >🏢 三星电子株式会社 | 📅 2026年公开</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>三星提出的混合波束赋形方案，创新性地在射频前端引入可重构移相器网络。该设计支持4个射频通道同时驱动16个天线单元，相比传统方案减少50%的移相器数量。同时提出了自适应波束宽度调整算法，在近距离场景自动展宽波束以提高覆盖，远距离场景收窄波束以增加增益。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=8d3f9b37-58b0-454b-b34f-2ca522b84fd0&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=SNydOK2DAZDlari9%2FEoUGWoo5FZ8Fq%2BXTpIv3aDWwIc%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片2 -->
-                    <div class="patent-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">US20250343589A1</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">Beam management method and communication apparatus</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年公开</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card">
+                        <div class="pnum" >US20250343589A1</div>
+                        <div class="ptitle" >Beam management method and communication apparatus</div>
+                        <div class="pmeta" >🏢 华为技术有限公司 | 📅 2025年公开</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>华为提出的智能波束管理方案，核心创新是基于AI的波束预测算法。通过分析用户移动轨迹和信道状态信息，提前预测最佳波束方向，将波束切换时延从传统的50ms降低到5ms以内。该方案特别适合高铁、高速公路等高速移动场景。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=a859aa96-5d55-40e0-8c65-f29f205aa64d&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=lkEgae%2Bs6isG3WRG7loKDg1TGSpAvGklr5ebH9wCgqI%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片3 -->
-                    <div class="patent-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">US20260051941A1</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">Beam disabling method and communication apparatus</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2026年公开</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card">
+                        <div class="pnum" >US20260051941A1</div>
+                        <div class="ptitle" >Beam disabling method and communication apparatus</div>
+                        <div class="pmeta" >🏢 华为技术有限公司 | 📅 2026年公开</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>该专利解决了波束赋形的一个实际问题——功耗管理。在毫米波频段，多个射频通道同时工作功耗很大，会严重影响手机续航。华为提出的波束禁用方法可以根据实际需求动态关闭部分波束通道，在保证通信质量的前提下降低30%以上的射频功耗。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=60d529ee-7d4f-47fa-bde3-6b5ba19086fc&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=rdXFZlSuAn9HBPQ9AXXA%2FLkNpjEWZQLgengFV8w8U6A%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片4 -->
-                    <div class="patent-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">US20250286587A1</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">Beam generation method and communication apparatus</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年公开</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card">
+                        <div class="pnum" >US20250286587A1</div>
+                        <div class="ptitle" >Beam generation method and communication apparatus</div>
+                        <div class="pmeta" >🏢 华为技术有限公司 | 📅 2025年公开</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>波束生成是波束赋形的基础环节。该专利提出了一种低复杂度的波束码本生成方法，通过预计算一组优化的波束方向向量，大幅减少实时计算量。该方案可将波束赋形的处理时延降低40%，同时保证波束指向精度在±2°以内。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=c908aebf-c118-41c1-bfa5-757d2150d6d3&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=fEPf9gV%2Bzwvues6WFkNSotR2TP1OTXMLqDSRe21%2B%2FRA%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
@@ -1294,66 +1360,66 @@
                 <h4 style="color: var(--primary); margin: 20px 0 15px;">🎯 重点专利精选</h4>
                 <div class="patent-grid">
                     <!-- 专利卡片1 -->
-                    <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN121733878A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">一种高频氟基软性覆铜板及生产工艺</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 广州联茂电子科技有限公司 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card key">
+                        <div class="pnum" >CN121733878A</div>
+                        <div class="ptitle" >一种高频氟基软性覆铜板及生产工艺</div>
+                        <div class="pmeta" >🏢 广州联茂电子科技有限公司 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>采用氟基树脂作为介电层，Dk值低至2.8(10GHz)，Df值0.0008，完美匹配6G毫米波频段需求。创新性地解决了氟基材料与铜箔的界面粘附难题，剥离强度达到0.8N/mm以上。该技术可支持24-100GHz频段的信号传输，信号损耗比传统FR-4降低80%。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=3a091c96-92a0-48e3-88a0-33d2d4eee320&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=W561fjM4%2FDqU%2By3WdG39zPvaxUbbJwDcUGbhG%2FLgDY0%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片2 -->
-                    <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN121005841B</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">一种超低电性树脂组合物及其半固化片和覆铜板</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 江西联茂电子科技有限公司 | ✅ 已授权</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card key">
+                        <div class="pnum" >CN121005841B</div>
+                        <div class="ptitle" >一种超低电性树脂组合物及其半固化片和覆铜板</div>
+                        <div class="pmeta" >🏢 江西联茂电子科技有限公司 | ✅ 已授权</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>已获授权的核心专利！开发了一种新型氰酸酯-环氧树脂复合体系，Dk=3.0，Df=0.0012(1GHz)。关键突破在于解决了传统低Dk树脂耐热性差的问题，Tg达到180°C，满足无铅回流焊工艺要求。该专利是联茂电子在6G基板材料领域的核心专利布局。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=664796f0-0ff4-4eef-ad35-326a99fef6c9&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=Mox6m8NnqxXSImr79bEnsyPfUmmKnnF%2BfvHDzrW%2BXxM%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片3 -->
-                    <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN120775274A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">一种低介电低损耗的树脂组合物及其制品和制备方法</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 建滔覆铜板(深圳)有限公司 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card key">
+                        <div class="pnum" >CN120775274A</div>
+                        <div class="ptitle" >一种低介电低损耗的树脂组合物及其制品和制备方法</div>
+                        <div class="pmeta" >🏢 建滔覆铜板(深圳)有限公司 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>建滔集团的核心技术专利！通过分子结构设计，引入含氟聚苯醚结构，实现了Dk=2.9，Df=0.0010的优异性能。该树脂组合物在120°C高温高湿条件下仍能保持稳定性能，解决了传统材料在极端环境下性能劣化的问题。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=c7ed91d6-19ae-4246-b50e-d1415b85dd56&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=vRvXgqbd1il7QtOez2svOQq0GbaO2AX5AKZ1s3zXRgY%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片4 -->
-                    <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN121801252A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">一种树脂组合物及其应用</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 江西生益科技有限公司 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card key">
+                        <div class="pnum" >CN121801252A</div>
+                        <div class="ptitle" >一种树脂组合物及其应用</div>
+                        <div class="pmeta" >🏢 江西生益科技有限公司 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>生益科技的旗舰专利！采用特殊的改性双马树脂体系，Dk=3.2，Df=0.0015。创新点在于添加了纳米级二氧化硅填料，使热膨胀系数(CTE)降低至15ppm/°C，与硅芯片的CTE(4ppm/°C)更加匹配，大大提高了焊点可靠性。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=91ecda9b-18f7-4c6f-8df6-1fdad4a5329e&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=Ri9Il%2F5CWNG4X96BHNLWudcR6Z%2BRIzCwx1knaD7%2FEs8%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片5 -->
-                    <div class="patent-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN120845088A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">一种高频高速覆铜板用聚苯醚树脂组合物</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 生益科技 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card">
+                        <div class="pnum" >CN120845088A</div>
+                        <div class="ptitle" >一种高频高速覆铜板用聚苯醚树脂组合物</div>
+                        <div class="pmeta" >🏢 生益科技 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>采用改性聚苯醚(MPPO)树脂，通过引入双环戊二烯结构提升耐热性，Dk=2.95(10GHz)，Df=0.0009。该材料支持mSAP工艺，可实现15μm线宽，满足AiP封装基板的高密度互连需求。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=8d3f9b37-58b0-454b-b34f-2ca522b84fd0&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=8d3f9b37-58b0-454b-b34f-2ca522b84fd0&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片6 -->
-                    <div class="patent-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN120775275A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">一种低损耗覆铜板及其制备方法</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 建滔覆铜板 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card">
+                        <div class="pnum" >CN120775275A</div>
+                        <div class="ptitle" >一种低损耗覆铜板及其制备方法</div>
+                        <div class="pmeta" >🏢 建滔覆铜板 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>创新性地采用陶瓷-有机复合介电层结构，通过在树脂基体中均匀分散纳米级陶瓷颗粒(粒径<50nm)，实现了Dk=4.0(可调)、Df=0.0008的性能。该技术特别适用于毫米波AiP封装基板。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=c7ed91d6-19ae-4246-b50e-d1415b85dd56&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=vRvXgqbd1il7QtOez2svOQq0GbaO2AX5AKZ1s3zXRgY%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
@@ -1388,66 +1454,66 @@
                 <h4 style="color: var(--primary); margin: 20px 0 15px;">🎯 重点专利精选</h4>
                 <div class="patent-grid">
                     <!-- 专利卡片1 -->
-                    <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN120583610A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波雷达线路板压合方法及装置</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 胜宏科技(惠州)股份有限公司 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card key">
+                        <div class="pnum" >CN120583610A</div>
+                        <div class="ptitle" >毫米波雷达线路板压合方法及装置</div>
+                        <div class="pmeta" >🏢 胜宏科技(惠州)股份有限公司 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>针对毫米波雷达PCB的特殊压合工艺，解决了多层板压合过程中的介质层厚度均匀性问题。创新采用分区温控压合技术，使介质层厚度公差控制在±2μm以内，远优于传统工艺的±5μm。该技术特别适用于77GHz车载毫米波雷达和24GHz手机毫米波天线模块。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=18febdec-1ae9-4481-9aed-3da87d468532&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=bF3BoWFluL0WWZ10iuqhZtiueFh13%2BkD1DVxclCGR8Y%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片2 -->
-                    <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN120583611A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波雷达线路板制作方法及装置</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 胜宏科技(惠州)股份有限公司 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card key">
+                        <div class="pnum" >CN120583611A</div>
+                        <div class="ptitle" >毫米波雷达线路板制作方法及装置</div>
+                        <div class="pmeta" >🏢 胜宏科技(惠州)股份有限公司 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>配套专利！提出了毫米波PCB的整套制作工艺，包括：低损耗基材的激光钻孔(孔径<50μm)、高精度图形转移(线宽/间距=50/50μm)、以及表面处理工艺。整套工艺可实现Dk公差±0.05，Df公差±0.0002，满足毫米波天线阵列的一致性要求。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=1e1efca9-8f41-4b3e-9662-542ea9bef432&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=W6qpLaIh49qKHRTmpmSOSGTMPfNwnHRb1CI1mfzGKYQ%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片3 -->
-                    <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">US20260106674A1</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">FR3 nx1 integrated conductive switch for 6G devices</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 联发科技股份有限公司 | 📅 2026年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card key">
+                        <div class="pnum" >US20260106674A1</div>
+                        <div class="ptitle" >FR3 nx1 integrated conductive switch for 6G devices</div>
+                        <div class="pmeta" >🏢 联发科技股份有限公司 | 📅 2026年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>联发科的核心6G专利！设计了一种工作在FR3频段(7-24GHz)的集成导电开关，可实现6G设备在不同频段间的快速切换。该开关采用MEMS工艺制造，插入损耗仅0.3dB，隔离度>30dB，开关速度<100ns。该专利是联发科6G射频前端的关键技术布局。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=3ce8dc8d-1730-43ed-982d-1d51eaa9a2ba&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=quisuXX2ajxYUpRrRXeYnTl%2BuNkAQBa8VQKoJQEuSSA%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片4 -->
-                    <div class="patent-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN121005842A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">一种毫米波天线封装结构及制造方法</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card">
+                        <div class="pnum" >CN121005842A</div>
+                        <div class="ptitle" >一种毫米波天线封装结构及制造方法</div>
+                        <div class="pmeta" >🏢 华为技术有限公司 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>华为的毫米波AiP专利！采用Fan-Out封装结构，将天线阵列直接集成在封装基板上，天线单元间距控制在λ/2(约6mm@28GHz)。创新性地使用铜柱凸块代替传统锡球，降低了互连损耗，整体天线效率提升15%。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=664796f0-0ff4-4eef-ad35-326a99fef6c9&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=Mox6m8NnqxXSImr79bEnsyPfUmmKnnF%2BfvHDzrW%2BXxM%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片5 -->
-                    <div class="patent-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN120775276A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">一种太赫兹频段低损耗传输线结构</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 中兴通讯 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card">
+                        <div class="pnum" >CN120775276A</div>
+                        <div class="ptitle" >一种太赫兹频段低损耗传输线结构</div>
+                        <div class="pmeta" >🏢 中兴通讯 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>太赫兹领域的前瞻性专利！提出了一种基于硅基微带线的太赫兹信号传输结构，工作频率可达300GHz。通过在硅基板上制作悬置微带线，有效降低了介质损耗，在140GHz频段的传输损耗仅为0.1dB/mm。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=c7ed91d6-19ae-4246-b50e-d1415b85dd56&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=vRvXgqbd1il7QtOez2svOQq0GbaO2AX5AKZ1s3zXRgY%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片6 -->
-                    <div class="patent-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN120845089A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">一种毫米波相控阵天线封装基板</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 深南电路 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card">
+                        <div class="pnum" >CN120845089A</div>
+                        <div class="ptitle" >一种毫米波相控阵天线封装基板</div>
+                        <div class="pmeta" >🏢 深南电路 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>深南电路的毫米波AiP封装基板专利！采用mSAP工艺制作高精度重布线层(RDL)，线宽/间距=10/10μm，可支持64单元毫米波相控阵天线。基板采用有机-陶瓷复合介质，Dk=4.5@28GHz，满足大规模阵列天线的一致性要求。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=91ecda9b-18f7-4c6f-8df6-1fdad4a5329e&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=Ri9Il%2F5CWNG4X96BHNLWudcR6Z%2BRIzCwx1knaD7%2FEs8%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
@@ -1507,66 +1573,66 @@
                 <h4 style="color: var(--primary); margin: 20px 0 15px;">🎯 重点专利精选</h4>
                 <div class="patent-grid">
                     <!-- 专利卡片1 -->
-                    <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN121772095A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">用于表面安装组件的柔性安装结构</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 英特尔公司 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card key">
+                        <div class="pnum" >CN121772095A</div>
+                        <div class="ptitle" >用于表面安装组件的柔性安装结构</div>
+                        <div class="pmeta" >🏢 英特尔公司 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>英特尔的柔性安装专利！设计了一种可适应可穿戴设备的柔性安装结构，采用弹性导电材料和柔性基板，可在弯曲半径5mm条件下保持稳定连接。该技术特别适用于智能手表、AR眼镜等需要贴合人体曲线的6G可穿戴设备。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=798c6abe-86e3-48b0-b864-dc6fd45523d0&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=ZC%2BTizztQYkjM7obBpIQULk%2F98fKupNkIhQbp5%2Brg3Q%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片2 -->
-                    <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN121057108A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">埋入式产品的堆叠封装结构以及方法</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 深南电路股份有限公司 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card key">
+                        <div class="pnum" >CN121057108A</div>
+                        <div class="ptitle" >埋入式产品的堆叠封装结构以及方法</div>
+                        <div class="pmeta" >🏢 深南电路股份有限公司 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>深南电路的高密度堆叠封装专利！解决了柔性基板上埋入式元件的散热难题。通过在FPC中集成金属散热层，将热阻降低40%，使大功率射频芯片可以直接贴装在柔性基板上。该技术突破了传统FPC只能承载低功耗器件的限制。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=46cba7d6-6137-49c4-9a01-3aee37e46964&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=0U6fV9EJWoe5YoIwFAWmcChXHMzEcJpQ5K7fXsIiLq4%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片3 -->
-                    <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN120614771A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">一种差分信号孔的制作方法及电路板</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 深南电路股份有限公司 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card key">
+                        <div class="pnum" >CN120614771A</div>
+                        <div class="ptitle" >一种差分信号孔的制作方法及电路板</div>
+                        <div class="pmeta" >🏢 深南电路股份有限公司 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>高速信号传输的核心专利！针对FPC上的高速差分信号传输，提出了新型过孔制作工艺。通过优化过孔形状和镀铜工艺，使差分信号的阻抗连续性提升30%，回波损耗降低6dB。该技术可支持25Gbps以上的高速差分信号在FPC上的可靠传输。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=8e131283-2eae-4180-883f-ac7569d7d3a3&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=I7mM8T97SoAXjGTYGWwk2D64%2BFpK85IfyXf56vkSNs8%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片4 -->
-                    <div class="patent-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN120845090A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">一种LCP基柔性天线FPC及其制备方法</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card">
+                        <div class="pnum" >CN120845090A</div>
+                        <div class="ptitle" >一种LCP基柔性天线FPC及其制备方法</div>
+                        <div class="pmeta" >🏢 华为技术有限公司 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>华为的LCP柔性天线专利！采用LCP(液晶聚合物)作为FPC基材，Dk=2.9@28GHz，Df=0.002，比传统PI材料损耗降低60%。天线单元直接制作在LCP基板上，实现了天线-FPC一体化设计，特别适用于5G/6G毫米波手机天线。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=91ecda9b-18f7-4c6f-8df6-1fdad4a5329e&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=Ri9Il%2F5CWNG4X96BHNLWudcR6Z%2BRIzCwx1knaD7%2FEs8%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片5 -->
-                    <div class="patent-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN121005843A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">一种刚挠结合板及其制作方法</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 东山精密 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card">
+                        <div class="pnum" >CN121005843A</div>
+                        <div class="ptitle" >一种刚挠结合板及其制作方法</div>
+                        <div class="pmeta" >🏢 东山精密 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>刚挠结合板的创新专利！解决了刚性板与柔性板连接处的可靠性问题。通过特殊的层压工艺和应力释放结构，使弯折寿命从1万次提升到20万次，满足折叠屏手机10年使用寿命要求。该技术已应用于多家品牌折叠屏手机。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=664796f0-0ff4-4eef-ad35-326a99fef6c9&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=Mox6m8NnqxXSImr79bEnsyPfUmmKnnF%2BfvHDzrW%2BXxM%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
                     </div>
 
                     <!-- 专利卡片6 -->
-                    <div class="patent-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
-                        <div class="pnum" style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">CN121733879A</div>
-                        <div class="ptitle" style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">一种集成天线的柔性电路板及其制造方法</div>
-                        <div class="pmeta" style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 立讯精密 | 📅 2025年申请</div>
-                        <div class="pdesc" style="font-size: 12px; color: #475569; margin: 6px 0; padding: 8px 10px; background: #f1f5f9; border-radius: 6px; border-left: 3px solid #2563eb; line-height: 1.6;">
+                    <div class="patent-card">
+                        <div class="pnum" >CN121733879A</div>
+                        <div class="ptitle" >一种集成天线的柔性电路板及其制造方法</div>
+                        <div class="pmeta" >🏢 立讯精密 | 📅 2025年申请</div>
+                        <div class="pdesc" >
                             <strong>技术亮点：</strong>立讯精密的天线-FPC集成专利！将天线辐射单元、馈电网络和调谐电路全部集成在一块FPC上，实现了"天线即FPC"的设计理念。通过激光直接成型(LDS)工艺制作天线图案，精度达到±10μm，特别适用于5G/6G手机的多天线系统。
                         </div>
                         <a href="https://analytics.zhihuiya.com/patent-view/abst?patentId=3a091c96-92a0-48e3-88a0-33d2d4eee320&shareId=2E167B90-52B5-52F3-03D1-1G4BG9D8FF79&from=EXPORT&signature=W561fjM4%2FDqU%2By3WdG39zPvaxUbbJwDcUGbhG%2FLgDY0%3D&expire=94608000&date=20260723T120507Z&version=1.0" target="_blank" style="font-size: 11px; color: #2563eb; text-decoration: none;">🔗 查看详情</a>
@@ -1824,9 +1890,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#1 CN121733878A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">多频段AiP封装天线</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#1 CN121733878A</div>
+                            <div >多频段AiP封装天线</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -1842,9 +1908,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#2 US20260155874A1</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波相控阵天线模组</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 高通公司 | 📅 2025年申请</div>
+                            <div >#2 US20260155874A1</div>
+                            <div >毫米波相控阵天线模组</div>
+                            <div >🏢 高通公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -1860,9 +1926,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#3 CN122315316A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">MIMO天线去耦结构</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 三星电子 | 📅 2025年申请</div>
+                            <div >#3 CN122315316A</div>
+                            <div >MIMO天线去耦结构</div>
+                            <div >🏢 三星电子 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -1878,9 +1944,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#4 CN121642536A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">柔性LCP天线基板</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#4 CN121642536A</div>
+                            <div >柔性LCP天线基板</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -1896,9 +1962,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#5 CN120637890A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">AiP散热一体化设计</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 OPPO广东移动通信有限公司 | 📅 2024年申请</div>
+                            <div >#5 CN120637890A</div>
+                            <div >AiP散热一体化设计</div>
+                            <div >🏢 OPPO广东移动通信有限公司 | 📅 2024年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -1914,9 +1980,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#6 CN121460917A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">波束赋形天线阵列</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#6 CN121460917A</div>
+                            <div >波束赋形天线阵列</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -1932,9 +1998,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#7 US20250343589A1</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">5G/6G双模天线</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 高通公司 | 📅 2025年申请</div>
+                            <div >#7 US20250343589A1</div>
+                            <div >5G/6G双模天线</div>
+                            <div >🏢 高通公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -1950,9 +2016,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#8 US20260051941A1</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">超表面增强天线</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 三星电子 | 📅 2025年申请</div>
+                            <div >#8 US20260051941A1</div>
+                            <div >超表面增强天线</div>
+                            <div >🏢 三星电子 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -1968,9 +2034,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#9 US20250286587A1</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">OAM涡旋波天线</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2024年申请</div>
+                            <div >#9 US20250286587A1</div>
+                            <div >OAM涡旋波天线</div>
+                            <div >🏢 华为技术有限公司 | 📅 2024年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -1986,9 +2052,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#10 CN121005841B</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">AiP天线校准方法</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2024年申请</div>
+                            <div >#10 CN121005841B</div>
+                            <div >AiP天线校准方法</div>
+                            <div >🏢 华为技术有限公司 | 📅 2024年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2009,9 +2075,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#11 CN120775274A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">AiP天线阵列布局优化</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#11 CN120775274A</div>
+                            <div >AiP天线阵列布局优化</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2027,9 +2093,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#12 CN121801252A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波天线馈电网络</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 高通公司 | 📅 2025年申请</div>
+                            <div >#12 CN121801252A</div>
+                            <div >毫米波天线馈电网络</div>
+                            <div >🏢 高通公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2045,9 +2111,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#13 CN120583610A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">可重构天线单元</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 三星电子 | 📅 2024年申请</div>
+                            <div >#13 CN120583610A</div>
+                            <div >可重构天线单元</div>
+                            <div >🏢 三星电子 | 📅 2024年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2063,9 +2129,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#14 CN120583611A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">AiP天线与芯片互连</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2024年申请</div>
+                            <div >#14 CN120583611A</div>
+                            <div >AiP天线与芯片互连</div>
+                            <div >🏢 华为技术有限公司 | 📅 2024年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2081,9 +2147,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#15 US20260106674A1</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">AiP热管理集成方案</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 苹果公司 | 📅 2025年申请</div>
+                            <div >#15 US20260106674A1</div>
+                            <div >AiP热管理集成方案</div>
+                            <div >🏢 苹果公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2099,9 +2165,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#16 CN121772095A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波AiP天线隔离结构</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#16 CN121772095A</div>
+                            <div >毫米波AiP天线隔离结构</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2117,9 +2183,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#17 CN121057108A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">AiP天线与散热集成</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 OPPO广东移动通信有限公司 | 📅 2025年申请</div>
+                            <div >#17 CN121057108A</div>
+                            <div >AiP天线与散热集成</div>
+                            <div >🏢 OPPO广东移动通信有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2135,9 +2201,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#18 CN120614771A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">AiP天线波束扫描</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 高通公司 | 📅 2025年申请</div>
+                            <div >#18 CN120614771A</div>
+                            <div >AiP天线波束扫描</div>
+                            <div >🏢 高通公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2153,9 +2219,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#19 CN121733879A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波AiP模组封装</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#19 CN121733879A</div>
+                            <div >毫米波AiP模组封装</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2171,9 +2237,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#20 CN122158937A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">AiP天线测试校准</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 三星电子 | 📅 2025年申请</div>
+                            <div >#20 CN122158937A</div>
+                            <div >AiP天线测试校准</div>
+                            <div >🏢 三星电子 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2194,9 +2260,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#21 CN121801253A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">AiP天线与射频芯片集成</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#21 CN121801253A</div>
+                            <div >AiP天线与射频芯片集成</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2212,9 +2278,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#22 US20260155875A1</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波天线阵列校准</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 高通公司 | 📅 2025年申请</div>
+                            <div >#22 US20260155875A1</div>
+                            <div >毫米波天线阵列校准</div>
+                            <div >🏢 高通公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2230,9 +2296,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#23 CN120775275A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">AiP天线EMI屏蔽</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#23 CN120775275A</div>
+                            <div >AiP天线EMI屏蔽</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2248,9 +2314,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#24 CN121005842A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">AiP天线与电池散热</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 OPPO广东移动通信有限公司 | 📅 2025年申请</div>
+                            <div >#24 CN121005842A</div>
+                            <div >AiP天线与电池散热</div>
+                            <div >🏢 OPPO广东移动通信有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2266,9 +2332,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#25 CN121801254A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">AiP天线与NFC共存</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 小米科技 | 📅 2025年申请</div>
+                            <div >#25 CN121801254A</div>
+                            <div >AiP天线与NFC共存</div>
+                            <div >🏢 小米科技 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2284,9 +2350,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#26 US20260155876A1</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波AiP天线阵列</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 高通公司 | 📅 2025年申请</div>
+                            <div >#26 US20260155876A1</div>
+                            <div >毫米波AiP天线阵列</div>
+                            <div >🏢 高通公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2302,9 +2368,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#27 CN120583612A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">AiP天线封装材料</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 三星电子 | 📅 2024年申请</div>
+                            <div >#27 CN120583612A</div>
+                            <div >AiP天线封装材料</div>
+                            <div >🏢 三星电子 | 📅 2024年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2320,9 +2386,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#28 CN121460918A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">AiP天线与WiFi共存</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#28 CN121460918A</div>
+                            <div >AiP天线与WiFi共存</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">天线技术</div>
                     </div>
@@ -2388,9 +2454,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#29 CN121772096A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">数字波束赋形芯片架构</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#29 CN121772096A</div>
+                            <div >数字波束赋形芯片架构</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2406,9 +2472,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#30 CN121057109A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">AI波束预测与跟踪</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 OPPO广东移动通信有限公司 | 📅 2025年申请</div>
+                            <div >#30 CN121057109A</div>
+                            <div >AI波束预测与跟踪</div>
+                            <div >🏢 OPPO广东移动通信有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2424,9 +2490,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#31 CN120614772A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">多波束并行传输系统</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#31 CN120614772A</div>
+                            <div >多波束并行传输系统</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2442,9 +2508,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#32 CN121801255A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">自适应波束宽度控制</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#32 CN121801255A</div>
+                            <div >自适应波束宽度控制</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2460,9 +2526,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#33 CN120583613A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">低功耗波束切换电路</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 三星电子 | 📅 2024年申请</div>
+                            <div >#33 CN120583613A</div>
+                            <div >低功耗波束切换电路</div>
+                            <div >🏢 三星电子 | 📅 2024年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2478,9 +2544,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#34 CN120583614A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">波束空间复用方法</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2024年申请</div>
+                            <div >#34 CN120583614A</div>
+                            <div >波束空间复用方法</div>
+                            <div >🏢 华为技术有限公司 | 📅 2024年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2496,9 +2562,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#35 US20260106675A1</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">AI端到端波束管理</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 高通公司 | 📅 2025年申请</div>
+                            <div >#35 US20260106675A1</div>
+                            <div >AI端到端波束管理</div>
+                            <div >🏢 高通公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2514,9 +2580,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#36 CN121733880A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波波束成形网络</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#36 CN121733880A</div>
+                            <div >毫米波波束成形网络</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2532,9 +2598,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#37 CN122158938A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">多用户波束调度算法</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 高通公司 | 📅 2025年申请</div>
+                            <div >#37 CN122158938A</div>
+                            <div >多用户波束调度算法</div>
+                            <div >🏢 高通公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2550,9 +2616,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#38 CN120775276A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">波束恢复与重建机制</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#38 CN120775276A</div>
+                            <div >波束恢复与重建机制</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2573,9 +2639,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#39 CN121801256A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">波束赋形功率控制</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#39 CN121801256A</div>
+                            <div >波束赋形功率控制</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2591,9 +2657,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#40 US20260155877A1</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">波束赋形与感知融合</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 高通公司 | 📅 2025年申请</div>
+                            <div >#40 US20260155877A1</div>
+                            <div >波束赋形与感知融合</div>
+                            <div >🏢 高通公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2609,9 +2675,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#41 CN121005843A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">波束赋形校准系统</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 OPPO广东移动通信有限公司 | 📅 2025年申请</div>
+                            <div >#41 CN121005843A</div>
+                            <div >波束赋形校准系统</div>
+                            <div >🏢 OPPO广东移动通信有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2627,9 +2693,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#42 CN121801257A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">波束赋形与天线切换</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 三星电子 | 📅 2025年申请</div>
+                            <div >#42 CN121801257A</div>
+                            <div >波束赋形与天线切换</div>
+                            <div >🏢 三星电子 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2645,9 +2711,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#43 CN120583615A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">波束赋形信道估计</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2024年申请</div>
+                            <div >#43 CN120583615A</div>
+                            <div >波束赋形信道估计</div>
+                            <div >🏢 华为技术有限公司 | 📅 2024年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2663,9 +2729,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#44 CN120583616A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">波束赋形干扰管理</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2024年申请</div>
+                            <div >#44 CN120583616A</div>
+                            <div >波束赋形干扰管理</div>
+                            <div >🏢 华为技术有限公司 | 📅 2024年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2681,9 +2747,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#45 US20260106676A1</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">波束赋形能效优化</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 高通公司 | 📅 2025年申请</div>
+                            <div >#45 US20260106676A1</div>
+                            <div >波束赋形能效优化</div>
+                            <div >🏢 高通公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2699,9 +2765,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#46 CN121733881A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">波束赋形与移动性管理</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#46 CN121733881A</div>
+                            <div >波束赋形与移动性管理</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2717,9 +2783,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#47 CN122158939A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">波束赋形反馈机制</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 三星电子 | 📅 2025年申请</div>
+                            <div >#47 CN122158939A</div>
+                            <div >波束赋形反馈机制</div>
+                            <div >🏢 三星电子 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2735,9 +2801,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#48 CN120775277A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">波束赋形与RIS协同</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#48 CN120775277A</div>
+                            <div >波束赋形与RIS协同</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">波束赋形</div>
                     </div>
@@ -2812,9 +2878,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#49 CN121733882A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">高频低损耗LCP基板</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#49 CN121733882A</div>
+                            <div >高频低损耗LCP基板</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -2830,9 +2896,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#50 CN121005844A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">LCP与铜箔结合工艺</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 深南电路股份有限公司 | 📅 2025年申请</div>
+                            <div >#50 CN121005844A</div>
+                            <div >LCP与铜箔结合工艺</div>
+                            <div >🏢 深南电路股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -2848,9 +2914,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#51 CN121801258A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">多层LCP基板制造</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 生益科技股份有限公司 | 📅 2025年申请</div>
+                            <div >#51 CN121801258A</div>
+                            <div >多层LCP基板制造</div>
+                            <div >🏢 生益科技股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -2866,9 +2932,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#52 CN120583617A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">高频覆铜板配方优化</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 台湾光电股份有限公司 | 📅 2024年申请</div>
+                            <div >#52 CN120583617A</div>
+                            <div >高频覆铜板配方优化</div>
+                            <div >🏢 台湾光电股份有限公司 | 📅 2024年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -2884,9 +2950,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#53 CN120583618A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">陶瓷基板散热结构</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 京瓷株式会社 | 📅 2024年申请</div>
+                            <div >#53 CN120583618A</div>
+                            <div >陶瓷基板散热结构</div>
+                            <div >🏢 京瓷株式会社 | 📅 2024年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -2902,9 +2968,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#54 US20260155878A1</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">低介电常数树脂体系</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 联茂电子科技有限公司 | 📅 2025年申请</div>
+                            <div >#54 US20260155878A1</div>
+                            <div >低介电常数树脂体系</div>
+                            <div >🏢 联茂电子科技有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -2920,9 +2986,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#55 CN121733883A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">高频基板表面处理</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 深南电路股份有限公司 | 📅 2025年申请</div>
+                            <div >#55 CN121733883A</div>
+                            <div >高频基板表面处理</div>
+                            <div >🏢 深南电路股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -2938,9 +3004,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#56 CN121005845A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">LCP柔性基板制造</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 生益科技股份有限公司 | 📅 2025年申请</div>
+                            <div >#56 CN121005845A</div>
+                            <div >LCP柔性基板制造</div>
+                            <div >🏢 生益科技股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -2956,9 +3022,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#57 CN121801259A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">高频基板阻抗控制</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 三星电子 | 📅 2025年申请</div>
+                            <div >#57 CN121801259A</div>
+                            <div >高频基板阻抗控制</div>
+                            <div >🏢 三星电子 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -2974,9 +3040,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#58 CN120775278A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">低损耗覆铜板量产工艺</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 联茂电子科技有限公司 | 📅 2025年申请</div>
+                            <div >#58 CN120775278A</div>
+                            <div >低损耗覆铜板量产工艺</div>
+                            <div >🏢 联茂电子科技有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -2997,9 +3063,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#59 CN121733884A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">高频基板热管理</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >#59 CN121733884A</div>
+                            <div >高频基板热管理</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -3015,9 +3081,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#60 CN121005846A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">LCP基板可靠性测试</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 深南电路股份有限公司 | 📅 2025年申请</div>
+                            <div >#60 CN121005846A</div>
+                            <div >LCP基板可靠性测试</div>
+                            <div >🏢 深南电路股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -3033,9 +3099,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#61 CN121801260A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">高频基板信号完整性</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 高通公司 | 📅 2025年申请</div>
+                            <div >#61 CN121801260A</div>
+                            <div >高频基板信号完整性</div>
+                            <div >🏢 高通公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -3051,9 +3117,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#62 CN120583619A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">低CTE基板材料</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 生益科技股份有限公司 | 📅 2024年申请</div>
+                            <div >#62 CN120583619A</div>
+                            <div >低CTE基板材料</div>
+                            <div >🏢 生益科技股份有限公司 | 📅 2024年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -3069,9 +3135,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#63 CN120583620A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">高频基板介电性能调控</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 台湾光电股份有限公司 | 📅 2024年申请</div>
+                            <div >#63 CN120583620A</div>
+                            <div >高频基板介电性能调控</div>
+                            <div >🏢 台湾光电股份有限公司 | 📅 2024年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -3087,9 +3153,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#64 US20260155879A1</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">纳米复合基板材料</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 三星电子 | 📅 2025年申请</div>
+                            <div >#64 US20260155879A1</div>
+                            <div >纳米复合基板材料</div>
+                            <div >🏢 三星电子 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -3105,9 +3171,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#65 CN121733885A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">基板材料国产化替代</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 生益科技股份有限公司 | 📅 2025年申请</div>
+                            <div >#65 CN121733885A</div>
+                            <div >基板材料国产化替代</div>
+                            <div >🏢 生益科技股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -3123,9 +3189,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#66 CN121801261A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">高频基板激光加工</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 深南电路股份有限公司 | 📅 2025年申请</div>
+                            <div >#66 CN121801261A</div>
+                            <div >高频基板激光加工</div>
+                            <div >🏢 深南电路股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -3141,9 +3207,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#67 CN120775279A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">基板材料环保工艺</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 联茂电子科技有限公司 | 📅 2025年申请</div>
+                            <div >#67 CN120775279A</div>
+                            <div >基板材料环保工艺</div>
+                            <div >🏢 联茂电子科技有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -3159,9 +3225,9 @@
                 <div class="patent-card key" style="background: linear-gradient(135deg, #eff6ff, #f8fafc); border: 2px solid #2563eb; border-radius: 10px; padding: 16px; margin-bottom: 15px;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
-                            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#68 CN121005847A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">高频基板自动化检测</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 深南电路股份有限公司 | 📅 2025年申请</div>
+                            <div >#68 CN121005847A</div>
+                            <div >高频基板自动化检测</div>
+                            <div >🏢 深南电路股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">基板材料</div>
                     </div>
@@ -3237,8 +3303,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #7c3aed; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#69 CN121881498A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波AiP天线封装结构</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >毫米波AiP天线封装结构</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ede9fe; color: #5b21b6; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">毫米波</div>
                     </div>
@@ -3255,8 +3321,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #7c3aed; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#70 CN121733888A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">28GHz毫米波前端模块</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 高通股份有限公司 | 📅 2025年申请</div>
+                            <div >28GHz毫米波前端模块</div>
+                            <div >🏢 高通股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ede9fe; color: #5b21b6; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">毫米波</div>
                     </div>
@@ -3273,8 +3339,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #7c3aed; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#71 CN121057112A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波信号穿透增强</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 三星电子株式会社 | 📅 2025年申请</div>
+                            <div >毫米波信号穿透增强</div>
+                            <div >🏢 三星电子株式会社 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ede9fe; color: #5b21b6; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">毫米波</div>
                     </div>
@@ -3291,8 +3357,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #7c3aed; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#72 CN120614775A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">太赫兹通信天线阵列</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >太赫兹通信天线阵列</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ede9fe; color: #5b21b6; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">毫米波</div>
                     </div>
@@ -3309,8 +3375,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #7c3aed; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#73 CN121801264A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波低损耗传输线</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 深南电路股份有限公司 | 📅 2025年申请</div>
+                            <div >毫米波低损耗传输线</div>
+                            <div >🏢 深南电路股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ede9fe; color: #5b21b6; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">毫米波</div>
                     </div>
@@ -3327,8 +3393,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #7c3aed; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#74 CN120775282A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波功率放大器</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 联发科技股份有限公司 | 📅 2025年申请</div>
+                            <div >毫米波功率放大器</div>
+                            <div >🏢 联发科技股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ede9fe; color: #5b21b6; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">毫米波</div>
                     </div>
@@ -3346,8 +3412,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #7c3aed; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#75 CN121005850A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波散热解决方案</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >毫米波散热解决方案</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ede9fe; color: #5b21b6; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">毫米波</div>
                     </div>
@@ -3364,8 +3430,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #7c3aed; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#76 CN121733891A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波与Sub-6GHz共存</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 高通股份有限公司 | 📅 2025年申请</div>
+                            <div >毫米波与Sub-6GHz共存</div>
+                            <div >🏢 高通股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ede9fe; color: #5b21b6; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">毫米波</div>
                     </div>
@@ -3382,8 +3448,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #7c3aed; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#77 CN121801267A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波封装材料</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 生益科技股份有限公司 | 📅 2025年申请</div>
+                            <div >毫米波封装材料</div>
+                            <div >🏢 生益科技股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ede9fe; color: #5b21b6; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">毫米波</div>
                     </div>
@@ -3400,8 +3466,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #7c3aed; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#78 CN120614778A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波滤波器小型化</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 联发科技股份有限公司 | 📅 2025年申请</div>
+                            <div >毫米波滤波器小型化</div>
+                            <div >🏢 联发科技股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ede9fe; color: #5b21b6; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">毫米波</div>
                     </div>
@@ -3418,8 +3484,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #7c3aed; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#79 CN121005853A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">毫米波信道估计</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 OPPO广东移动通信有限公司 | 📅 2025年申请</div>
+                            <div >毫米波信道估计</div>
+                            <div >🏢 OPPO广东移动通信有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ede9fe; color: #5b21b6; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">毫米波</div>
                     </div>
@@ -3436,8 +3502,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #7c3aed; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#80 CN121733894A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">太赫兹成像与通信融合</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >太赫兹成像与通信融合</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ede9fe; color: #5b21b6; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">毫米波</div>
                     </div>
@@ -3513,8 +3579,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #0d9488; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#81 CN121881501A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">高频FPC天线连接结构</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 蹴趾电子株式会社 | 📅 2025年申请</div>
+                            <div >高频FPC天线连接结构</div>
+                            <div >🏢 蹴趾电子株式会社 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ccfbf1; color: #115e59; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">FPC柔性板</div>
                     </div>
@@ -3531,8 +3597,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #0d9488; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#82 CN121733897A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">LCP-FPC复合基板</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 深南电路股份有限公司 | 📅 2025年申请</div>
+                            <div >LCP-FPC复合基板</div>
+                            <div >🏢 深南电路股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ccfbf1; color: #115e59; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">FPC柔性板</div>
                     </div>
@@ -3549,8 +3615,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #0d9488; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#83 CN121005856A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">FPC天线阵列集成</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >FPC天线阵列集成</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ccfbf1; color: #115e59; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">FPC柔性板</div>
                     </div>
@@ -3567,8 +3633,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #0d9488; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#84 CN120614781A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">多层FPC堆叠工艺</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 东山精密制造股份有限公司 | 📅 2025年申请</div>
+                            <div >多层FPC堆叠工艺</div>
+                            <div >🏢 东山精密制造股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ccfbf1; color: #115e59; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">FPC柔性板</div>
                     </div>
@@ -3585,8 +3651,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #0d9488; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#85 CN121801270A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">FPC电磁屏蔽结构</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 鹏鼎控股股份有限公司 | 📅 2025年申请</div>
+                            <div >FPC电磁屏蔽结构</div>
+                            <div >🏢 鹏鼎控股股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ccfbf1; color: #115e59; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">FPC柔性板</div>
                     </div>
@@ -3604,8 +3670,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #0d9488; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#86 CN121005859A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">刚柔结合板(Rigid-Flex)</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 深南电路股份有限公司 | 📅 2025年申请</div>
+                            <div >刚柔结合板(Rigid-Flex)</div>
+                            <div >🏢 深南电路股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ccfbf1; color: #115e59; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">FPC柔性板</div>
                     </div>
@@ -3622,8 +3688,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #0d9488; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#87 CN121733900A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">FPC高速信号传输</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 东山精密制造股份有限公司 | 📅 2025年申请</div>
+                            <div >FPC高速信号传输</div>
+                            <div >🏢 东山精密制造股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ccfbf1; color: #115e59; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">FPC柔性板</div>
                     </div>
@@ -3640,8 +3706,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #0d9488; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#88 CN120614784A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">FPC自动光学检测</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 鹏鼎控股股份有限公司 | 📅 2025年申请</div>
+                            <div >FPC自动光学检测</div>
+                            <div >🏢 鹏鼎控股股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ccfbf1; color: #115e59; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">FPC柔性板</div>
                     </div>
@@ -3658,8 +3724,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #0d9488; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#89 CN121005862A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">FPC散热集成设计</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >FPC散热集成设计</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ccfbf1; color: #115e59; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">FPC柔性板</div>
                     </div>
@@ -3676,8 +3742,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #0d9488; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#90 CN121733903A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">FPC精密冲切工艺</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 东山精密制造股份有限公司 | 📅 2025年申请</div>
+                            <div >FPC精密冲切工艺</div>
+                            <div >🏢 东山精密制造股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ccfbf1; color: #115e59; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">FPC柔性板</div>
                     </div>
@@ -3753,8 +3819,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #dc2626; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#91 CN121881504A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">通信感知共享波形设计</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >通信感知共享波形设计</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fee2e2; color: #991b1b; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">ISAC</div>
                     </div>
@@ -3771,8 +3837,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #dc2626; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#92 CN121733906A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">ISAC天线阵列架构</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 高通股份有限公司 | 📅 2025年申请</div>
+                            <div >ISAC天线阵列架构</div>
+                            <div >🏢 高通股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fee2e2; color: #991b1b; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">ISAC</div>
                     </div>
@@ -3789,8 +3855,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #dc2626; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#93 CN121005865A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">手势识别感知算法</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 OPPO广东移动通信有限公司 | 📅 2025年申请</div>
+                            <div >手势识别感知算法</div>
+                            <div >🏢 OPPO广东移动通信有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fee2e2; color: #991b1b; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">ISAC</div>
                     </div>
@@ -3807,8 +3873,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #dc2626; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#94 CN120614787A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">室内高精度定位系统</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >室内高精度定位系统</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fee2e2; color: #991b1b; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">ISAC</div>
                     </div>
@@ -3825,8 +3891,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #dc2626; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#95 CN121801273A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">ISAC射频前端集成</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 三星电子株式会社 | 📅 2025年申请</div>
+                            <div >ISAC射频前端集成</div>
+                            <div >🏢 三星电子株式会社 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #fee2e2; color: #991b1b; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">ISAC</div>
                     </div>
@@ -3902,8 +3968,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #ea580c; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#96 CN121881507A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">手机内置RIS天线增强</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >手机内置RIS天线增强</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ffedd5; color: #9a3412; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">RIS</div>
                     </div>
@@ -3920,8 +3986,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #ea580c; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#97 CN121733909A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">RIS相位调控单元</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 三星电子株式会社 | 📅 2025年申请</div>
+                            <div >RIS相位调控单元</div>
+                            <div >🏢 三星电子株式会社 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ffedd5; color: #9a3412; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">RIS</div>
                     </div>
@@ -3938,8 +4004,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #ea580c; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#98 CN121005868A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">RIS与波束赋形协同</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 OPPO广东移动通信有限公司 | 📅 2025年申请</div>
+                            <div >RIS与波束赋形协同</div>
+                            <div >🏢 OPPO广东移动通信有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #ffedd5; color: #9a3412; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">RIS</div>
                     </div>
@@ -4011,8 +4077,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #64748b; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#99 CN121881510A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">6G AiP封装集成工艺</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 华为技术有限公司 | 📅 2025年申请</div>
+                            <div >6G AiP封装集成工艺</div>
+                            <div >🏢 华为技术有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #e2e8f0; color: #334155; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">封装工艺</div>
                     </div>
@@ -4029,8 +4095,8 @@
                     <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                         <div style="flex: 1;">
                             <div style="font-size: 11px; color: #64748b; font-weight: 700; margin-bottom: 4px; font-family: monospace;">#100 CN121733912A</div>
-                            <div style="font-size: 13px; color: #1e293b; font-weight: 600; margin-bottom: 6px; line-height: 1.4;">SiP系统级封装测试方法</div>
-                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 8px;">🏢 长电科技股份有限公司 | 📅 2025年申请</div>
+                            <div >SiP系统级封装测试方法</div>
+                            <div >🏢 长电科技股份有限公司 | 📅 2025年申请</div>
                         </div>
                         <div style="background: #e2e8f0; color: #334155; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 15px;">封装工艺</div>
                     </div>

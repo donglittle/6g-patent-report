@@ -25,11 +25,11 @@
 
         body {
             font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #f0f4f8;
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 20px 15px;
             color: var(--text-primary);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .report-container {
@@ -81,11 +81,11 @@
         }
 
         .report-content {
-            padding: 50px;
+            padding: 30px 35px;
         }
 
         .section {
-            margin-bottom: 50px;
+            margin-bottom: 35px;
         }
 
         .section-title {
@@ -263,18 +263,374 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* ========== 新增组件样式 ========== */
+        /* 思维导图容器 */
+        .mindmap-container {
+            background: #1a2332;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        .mindmap-container svg {
+            width: 100%;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        /* 步骤/时间线 */
+        .steps {
+            display: flex;
+            gap: 0;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .step {
+            flex: 1;
+            min-width: 100px;
+            text-align: center;
+            position: relative;
+            padding: 12px 8px;
+        }
+        .step::after {
+            content: '→';
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 18px;
+        }
+        .step:last-child::after {
+            display: none;
+        }
+        .step .snum {
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            margin: 0 auto 6px;
+        }
+        .step .stext {
+            font-size: 12px;
+            color: #334155;
+            line-height: 1.4;
+        }
+
+        /* 提示框 */
+        .tip-box {
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 14px 0;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+        .tip-box.blue {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            color: #1e40af;
+        }
+        .tip-box.green {
+            background: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            color: #14532d;
+        }
+        .tip-box.red {
+            background: #fff1f2;
+            border-left: 4px solid #dc2626;
+            color: #7f1d1d;
+        }
+        .tip-box.orange {
+            background: #fff7ed;
+            border-left: 4px solid #ea580c;
+            color: #7c2d12;
+        }
+
+        /* 知识卡片 */
+        .knowledge-box {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 22px 24px;
+            margin: 20px 0;
+            position: relative;
+        }
+        .knowledge-box::before {
+            content: '💡 知识加油站';
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #f59e0b;
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 3px 12px;
+            border-radius: 20px;
+        }
+        .knowledge-box h4 {
+            color: #92400e;
+            font-size: 15px;
+            margin-bottom: 10px;
+            margin-top: 8px;
+        }
+        .knowledge-box p, .knowledge-box li {
+            color: #78350f;
+            font-size: 13.5px;
+            line-height: 1.8;
+        }
+        .knowledge-box .analogy {
+            background: rgba(245,158,11,0.15);
+            border-left: 4px solid #f59e0b;
+            padding: 10px 14px;
+            border-radius: 0 8px 8px 0;
+            margin: 10px 0;
+            font-style: italic;
+            color: #92400e;
+            font-size: 13px;
+        }
+        .knowledge-box ul {
+            color: #78350f;
+            font-size: 13.5px;
+            padding-left: 18px;
+        }
+        .knowledge-box ul li {
+            margin-bottom: 6px;
+        }
+
+        /* 对比卡片 */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .compare-card {
+            border-radius: 10px;
+            padding: 16px;
+        }
+        .compare-card.old {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+        .compare-card.new {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        }
+        .compare-card h4 {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .compare-card.old h4 { color: #dc2626; }
+        .compare-card.new h4 { color: #15803d; }
+        .compare-card ul {
+            font-size: 12.5px;
+            padding-left: 16px;
+        }
+        .compare-card ul li {
+            margin-bottom: 5px;
+            color: #374151;
+        }
+
+        /* 深色图表容器 */
+        .diagram {
+            background: #1a2332;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 16px 0;
+            font-family: monospace;
+            font-size: 12px;
+            color: #e2e8f0;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+        .diagram .title {
+            color: #60a5fa;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        /* 增强专利卡片 */
+        .patent-card-enhanced {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 16px;
+            transition: all 0.2s;
+        }
+        .patent-card-enhanced:hover {
+            box-shadow: 0 4px 16px rgba(37,99,235,0.12);
+            border-color: #93c5fd;
+            transform: translateY(-2px);
+        }
+        .patent-card-enhanced.key {
+            border: 2px solid #2563eb;
+            background: linear-gradient(135deg, #eff6ff, #f8fafc);
+        }
+        .patent-card-enhanced .pnum {
+            font-size: 11px;
+            color: #2563eb;
+            font-weight: 700;
+            margin-bottom: 4px;
+            font-family: monospace;
+        }
+        .patent-card-enhanced .ptitle {
+            font-size: 13px;
+            color: #1e293b;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+        .patent-card-enhanced .pmeta {
+            font-size: 11.5px;
+            color: #64748b;
+            margin-bottom: 8px;
+        }
+        .patent-card-enhanced .pdesc {
+            font-size: 12px;
+            color: #475569;
+            margin: 6px 0;
+            padding: 8px 10px;
+            background: #f1f5f9;
+            border-radius: 6px;
+            border-left: 3px solid #2563eb;
+            line-height: 1.6;
+        }
+        .patent-card-enhanced .patent-img {
+            width: 100%;
+            max-height: 160px;
+            object-fit: contain;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            margin: 8px 0;
+            background: #fff;
+        }
+
+        /* 竞争格局网格 */
+        .competition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .competition-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 16px;
+            transition: all 0.2s;
+        }
+        .competition-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .competition-card .c-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        .competition-card .c-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 6px 0;
+        }
+        .competition-card .c-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+
+        /* Hero区域深色主题 */
+        .hero-dark {
+            background: linear-gradient(135deg, #0a1628 0%, #1a3a6e 40%, #0f4c8a 70%, #1565c0 100%);
+            color: white;
+            padding: 50px 45px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-dark::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(96,165,250,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-dark h1 {
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+        .hero-dark h1 span {
+            color: #60a5fa;
+        }
+        .hero-dark .subtitle {
+            font-size: 15px;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 24px;
+        }
+        .hero-dark .badges span {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin: 3px;
+        }
+        .hero-dark .stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .hero-dark .stat-item {
+            text-align: center;
+        }
+        .hero-dark .stat-item .num {
+            font-size: 36px;
+            font-weight: 700;
+            color: #60a5fa;
+        }
+        .hero-dark .stat-item .label {
+            font-size: 11px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 2px;
+        }
     </style>
 </head>
 <body>
     <div class="report-container">
-        <div class="report-header">
-            <h1>6G手机终端PCB产业链专利全景报告</h1>
-            <div class="subtitle">Patent Landscape Analysis for 6G Mobile Terminal PCB Industry Chain</div>
-            <div class="meta">
-                <span>📅 报告日期：2026年7月</span>
-                <span>📊 专利样本：532件</span>
-                <span>🔍 检索平台：智慧芽（PatSnap）</span>
-                <span>📋 重点专利：100件</span>
+        <!-- Hero深色渐变区域 -->
+        <div class="hero-dark">
+            <h1>6G手机终端PCB产业链<br><span>专利全景报告</span></h1>
+            <div class="subtitle">Patent Landscape Analysis for 6G Mobile Terminal PCB Industry Chain · 2026年7月</div>
+            <div class="badges">
+                <span>📱 手机PCB全链路</span>
+                <span>📊 532件专利</span>
+                <span>⭐ 100件重点</span>
+                <span>🔍 智慧芽检索</span>
+            </div>
+            <div class="stats">
+                <div class="stat-item"><div class="num">532</div><div class="label">专利总量</div></div>
+                <div class="stat-item"><div class="num">6</div><div class="label">技术方向</div></div>
+                <div class="stat-item"><div class="num">100</div><div class="label">重点精选</div></div>
+                <div class="stat-item"><div class="num">2030</div><div class="label">6G商用目标年</div></div>
+                <div class="stat-item"><div class="num">300GHz</div><div class="label">太赫兹起点</div></div>
             </div>
         </div>
 
@@ -307,6 +663,50 @@
 
                 <!-- 六大冲击概览 -->
                 <h3 style="font-size: 1.3em; color: var(--primary); margin: 30px 0 20px;">6G对手机PCB的六大核心冲击</h3>
+
+                <!-- 思维导图 -->
+                <div class="mindmap-container">
+                    <svg viewBox="0 0 920 380" style="width:100%;font-family:'Microsoft YaHei',sans-serif">
+                        <!-- 中心节点 -->
+                        <rect x="355" y="150" width="210" height="60" rx="12" fill="#2563eb"/>
+                        <text x="460" y="177" text-anchor="middle" fill="white" font-size="14" font-weight="bold">6G对手机PCB的冲击</text>
+                        <text x="460" y="197" text-anchor="middle" fill="#bfdbfe" font-size="11">主板·天线板·封装基板·FPC</text>
+                        <!-- 左侧连接线 -->
+                        <line x1="355" y1="170" x2="215" y2="80" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="4"/>
+                        <line x1="355" y1="180" x2="215" y2="180" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="4"/>
+                        <line x1="355" y1="190" x2="215" y2="290" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="4"/>
+                        <!-- 右侧连接线 -->
+                        <line x1="565" y1="170" x2="705" y2="80" stroke="#34d399" stroke-width="1.5" stroke-dasharray="4"/>
+                        <line x1="565" y1="180" x2="705" y2="180" stroke="#34d399" stroke-width="1.5" stroke-dasharray="4"/>
+                        <line x1="565" y1="190" x2="705" y2="290" stroke="#34d399" stroke-width="1.5" stroke-dasharray="4"/>
+                        <!-- 左侧节点 -->
+                        <rect x="70" y="52" width="148" height="58" rx="8" fill="#1e3a6e"/>
+                        <text x="144" y="75" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="bold">①主板基材革命</text>
+                        <text x="144" y="91" text-anchor="middle" fill="#94a3b8" font-size="10">FR-4→低损耗材料</text>
+                        <text x="144" y="103" text-anchor="middle" fill="#94a3b8" font-size="9">Dk&lt;3 / Df&lt;0.003</text>
+                        <rect x="70" y="152" width="148" height="58" rx="8" fill="#1e3a6e"/>
+                        <text x="144" y="175" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="bold">②天线FPC升级</text>
+                        <text x="144" y="191" text-anchor="middle" fill="#94a3b8" font-size="10">LCP取代PI基材</text>
+                        <text x="144" y="203" text-anchor="middle" fill="#94a3b8" font-size="9">天线一体化FPC</text>
+                        <rect x="70" y="262" width="148" height="58" rx="8" fill="#1e3a6e"/>
+                        <text x="144" y="285" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="bold">③AiP封装基板</text>
+                        <text x="144" y="301" text-anchor="middle" fill="#94a3b8" font-size="10">天线内嵌封装</text>
+                        <text x="144" y="313" text-anchor="middle" fill="#94a3b8" font-size="9">PCB即天线载体</text>
+                        <!-- 右侧节点 -->
+                        <rect x="702" y="52" width="148" height="58" rx="8" fill="#064e3b"/>
+                        <text x="776" y="75" text-anchor="middle" fill="#34d399" font-size="11" font-weight="bold">④HDI线路升级</text>
+                        <text x="776" y="91" text-anchor="middle" fill="#94a3b8" font-size="10">L/S从25μm→2μm</text>
+                        <text x="776" y="103" text-anchor="middle" fill="#94a3b8" font-size="9">mSAP/SAP工艺</text>
+                        <rect x="702" y="152" width="148" height="58" rx="8" fill="#064e3b"/>
+                        <text x="776" y="175" text-anchor="middle" fill="#34d399" font-size="11" font-weight="bold">⑤封装散热挑战</text>
+                        <text x="776" y="191" text-anchor="middle" fill="#94a3b8" font-size="10">芯片功率密度×3</text>
+                        <text x="776" y="203" text-anchor="middle" fill="#94a3b8" font-size="9">PCB嵌铜/导热层</text>
+                        <rect x="702" y="262" width="148" height="58" rx="8" fill="#064e3b"/>
+                        <text x="776" y="285" text-anchor="middle" fill="#34d399" font-size="11" font-weight="bold">⑥玻璃/新型基板</text>
+                        <text x="776" y="301" text-anchor="middle" fill="#94a3b8" font-size="10">替代有机封装基板</text>
+                        <text x="776" y="313" text-anchor="middle" fill="#94a3b8" font-size="9">TGV玻璃通孔</text>
+                    </svg>
+                </div>
 
                 <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); margin: 25px 0;">
                     <div class="stat-card" style="text-align:left;padding:20px 25px;">
@@ -606,6 +1006,45 @@
                     </div>
                 </div>
 
+                <!-- AiP封装结构演进图 -->
+                <div class="diagram">
+                    <div class="title">AiP封装技术演进路线</div>
+                    <svg viewBox="0 0 800 200" style="width:100%">
+                        <rect x="20" y="30" width="180" height="140" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+                        <text x="110" y="50" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="bold">传统外置天线</text>
+                        <rect x="40" y="100" width="60" height="25" rx="4" fill="#334155"/>
+                        <text x="70" y="117" text-anchor="middle" fill="#94a3b8" font-size="9">芯片</text>
+                        <rect x="40" y="65" width="140" height="15" rx="3" fill="#475569"/>
+                        <text x="110" y="76" text-anchor="middle" fill="#94a3b8" font-size="8">主板PCB</text>
+                        <line x1="150" y1="65" x2="150" y2="45" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3"/>
+                        <rect x="120" y="32" width="60" height="12" rx="3" fill="#f59e0b" opacity="0.6"/>
+                        <text x="150" y="41" text-anchor="middle" fill="#1e293b" font-size="7">天线FPC</text>
+                        <text x="110" y="155" text-anchor="middle" fill="#64748b" font-size="9">互连损耗大</text>
+                        <text x="225" y="100" fill="#475569" font-size="20">→</text>
+                        <rect x="260" y="30" width="200" height="140" rx="8" fill="#1e293b" stroke="#2563eb" stroke-width="1.5"/>
+                        <text x="360" y="50" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="bold">2D AiP（平面集成）</text>
+                        <rect x="290" y="90" width="50" height="20" rx="3" fill="#1e40af"/>
+                        <text x="315" y="104" text-anchor="middle" fill="white" font-size="8">RFIC</text>
+                        <rect x="280" y="60" width="160" height="25" rx="3" fill="#2563eb" opacity="0.3"/>
+                        <text x="360" y="77" text-anchor="middle" fill="#60a5fa" font-size="8">封装基板 + 天线层</text>
+                        <rect x="280" y="115" width="160" height="15" rx="3" fill="#334155"/>
+                        <text x="360" y="126" text-anchor="middle" fill="#94a3b8" font-size="8">主板</text>
+                        <text x="360" y="155" text-anchor="middle" fill="#64748b" font-size="9">体积省30%</text>
+                        <text x="485" y="100" fill="#475569" font-size="20">→</text>
+                        <rect x="520" y="30" width="250" height="140" rx="8" fill="#1e293b" stroke="#059669" stroke-width="1.5"/>
+                        <text x="645" y="50" text-anchor="middle" fill="#34d399" font-size="11" font-weight="bold">3D AiP（垂直堆叠）</text>
+                        <rect x="560" y="65" width="170" height="18" rx="3" fill="#059669" opacity="0.5"/>
+                        <text x="645" y="78" text-anchor="middle" fill="white" font-size="8">天线辐射层（64-256单元）</text>
+                        <rect x="570" y="86" width="150" height="16" rx="3" fill="#047857"/>
+                        <text x="645" y="98" text-anchor="middle" fill="#d1fae5" font-size="8">接地/馈电层</text>
+                        <rect x="580" y="105" width="130" height="18" rx="3" fill="#1e40af"/>
+                        <text x="645" y="118" text-anchor="middle" fill="white" font-size="8">RFIC芯片层</text>
+                        <rect x="560" y="128" width="170" height="15" rx="3" fill="#334155"/>
+                        <text x="645" y="139" text-anchor="middle" fill="#94a3b8" font-size="8">主板</text>
+                        <text x="645" y="155" text-anchor="middle" fill="#64748b" font-size="9">体积省60%+ · 6G主流方案</text>
+                    </svg>
+                </div>
+
                 <div class="highlight-box">
                     <h4>📌 技术概述</h4>
                     <ul>
@@ -810,6 +1249,48 @@
                     <div class="analogy">📌 类比理解：基板之于手机，就像地基之于摩天大楼。6G时代的大楼要盖到300层(太赫兹频段)，地基必须重新设计——这就是为什么73件专利聚焦于此。</div>
                 </div>
 
+                <!-- 材料Df性能对比图 -->
+                <div class="diagram">
+                    <div class="title">PCB基材介电损耗（Df）性能对比</div>
+                    <svg viewBox="0 0 800 180" style="width:100%">
+                        <!-- Df轴 -->
+                        <line x1="80" y1="90" x2="750" y2="90" stroke="#475569" stroke-width="2"/>
+                        <text x="770" y="94" fill="#94a3b8" font-size="11">Df →</text>
+                        <text x="80" y="94" fill="#94a3b8" font-size="11" text-anchor="end">高</text>
+                        <!-- 刻度 -->
+                        <text x="150" y="110" fill="#64748b" font-size="9" text-anchor="middle">0.020</text>
+                        <text x="300" y="110" fill="#64748b" font-size="9" text-anchor="middle">0.010</text>
+                        <text x="450" y="110" fill="#64748b" font-size="9" text-anchor="middle">0.005</text>
+                        <text x="580" y="110" fill="#64748b" font-size="9" text-anchor="middle">0.002</text>
+                        <text x="700" y="110" fill="#64748b" font-size="9" text-anchor="middle">0.001</text>
+                        <!-- FR-4 -->
+                        <rect x="120" y="45" width="70" height="36" rx="6" fill="#dc2626" opacity="0.8"/>
+                        <text x="155" y="68" text-anchor="middle" fill="white" font-size="11" font-weight="bold">FR-4</text>
+                        <text x="155" y="35" fill="#f87171" font-size="10" text-anchor="middle">Df=0.020</text>
+                        <!-- PPE -->
+                        <rect x="370" y="45" width="80" height="36" rx="6" fill="#f59e0b" opacity="0.8"/>
+                        <text x="410" y="68" text-anchor="middle" fill="white" font-size="11" font-weight="bold">PPE/PPO</text>
+                        <text x="410" y="35" fill="#fbbf24" font-size="10" text-anchor="middle">Df=0.003-0.005</text>
+                        <!-- LCP -->
+                        <rect x="545" y="45" width="70" height="36" rx="6" fill="#2563eb" opacity="0.8"/>
+                        <text x="580" y="68" text-anchor="middle" fill="white" font-size="11" font-weight="bold">LCP</text>
+                        <text x="580" y="35" fill="#60a5fa" font-size="10" text-anchor="middle">Df=0.002</text>
+                        <!-- PTFE -->
+                        <rect x="665" y="45" width="70" height="36" rx="6" fill="#059669" opacity="0.8"/>
+                        <text x="700" y="68" text-anchor="middle" fill="white" font-size="11" font-weight="bold">PTFE</text>
+                        <text x="700" y="35" fill="#34d399" font-size="10" text-anchor="middle">Df=0.0008</text>
+                        <!-- 6G门槛线 -->
+                        <line x1="500" y1="25" x2="500" y2="145" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6"/>
+                        <text x="500" y="140" fill="#ef4444" font-size="10" text-anchor="middle">← 6G要求 Df&lt;0.003 →</text>
+                        <!-- 图例说明 -->
+                        <text x="400" y="170" fill="#94a3b8" font-size="10" text-anchor="middle">信号在FR-4中每米损耗120dB（300GHz），走3cm即衰减殆尽</text>
+                    </svg>
+                </div>
+
+                <div class="tip-box orange">
+                    <strong>⚠️ 窗口期警示：</strong>2026-2029年是低损耗材料专利布局黄金期。生益科技在PPE路线已基本追平（Df≈0.003-0.005），但PTFE路线（Df&lt;0.001）仍有差距——Rogers的PTFE层压板已量产多年，国产方案还在专利阶段。
+                </div>
+
                 <h4 style="color: var(--primary); margin: 20px 0 15px;">🎯 重点专利精选</h4>
                 <div class="patent-grid">
                     <!-- 专利卡片1 -->
@@ -989,6 +1470,40 @@
                     <div class="analogy">📌 类比理解：如果把手机比作人体，FPC就是"神经系统"——既要传递高速信号(6G数据)，又要承受反复弯折(折叠屏开合)，还要保持灵敏度(天线性能)。</div>
                 </div>
 
+                <!-- FPC基材演进图 -->
+                <div class="diagram">
+                    <div class="title">FPC基材技术路线演进</div>
+                    <svg viewBox="0 0 800 140" style="width:100%">
+                        <!-- PI -->
+                        <rect x="30" y="25" width="160" height="90" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+                        <text x="110" y="45" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="bold">PI（聚酰亚胺）</text>
+                        <text x="110" y="65" text-anchor="middle" fill="#64748b" font-size="9">Dk=3.5, Df=0.008</text>
+                        <text x="110" y="82" text-anchor="middle" fill="#64748b" font-size="9">传统FPC基材</text>
+                        <text x="110" y="100" text-anchor="middle" fill="#f59e0b" font-size="10">4G/5G低频天线</text>
+                        <text x="210" y="70" fill="#475569" font-size="20">→</text>
+                        <!-- MPI -->
+                        <rect x="230" y="25" width="160" height="90" rx="8" fill="#1e293b" stroke="#2563eb" stroke-width="1"/>
+                        <text x="310" y="45" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="bold">MPI（改性PI）</text>
+                        <text x="310" y="65" text-anchor="middle" fill="#64748b" font-size="9">Dk=3.2, Df=0.004</text>
+                        <text x="310" y="82" text-anchor="middle" fill="#64748b" font-size="9">过渡方案</text>
+                        <text x="310" y="100" text-anchor="middle" fill="#60a5fa" font-size="10">5G毫米波过渡</text>
+                        <text x="410" y="70" fill="#475569" font-size="20">→</text>
+                        <!-- LCP -->
+                        <rect x="430" y="25" width="160" height="90" rx="8" fill="#1e293b" stroke="#059669" stroke-width="1.5"/>
+                        <text x="510" y="45" text-anchor="middle" fill="#34d399" font-size="11" font-weight="bold">LCP（液晶聚合物）</text>
+                        <text x="510" y="65" text-anchor="middle" fill="#64748b" font-size="9">Dk=2.9, Df=0.002</text>
+                        <text x="510" y="82" text-anchor="middle" fill="#64748b" font-size="9">可弯折+低损耗</text>
+                        <text x="510" y="100" text-anchor="middle" fill="#34d399" font-size="10">5G/6G天线FPC</text>
+                        <text x="610" y="70" fill="#475569" font-size="20">→</text>
+                        <!-- 刚柔结合 -->
+                        <rect x="630" y="25" width="150" height="90" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
+                        <text x="705" y="45" text-anchor="middle" fill="#c084fc" font-size="11" font-weight="bold">Rigid-Flex</text>
+                        <text x="705" y="65" text-anchor="middle" fill="#64748b" font-size="9">刚柔结合板</text>
+                        <text x="705" y="82" text-anchor="middle" fill="#64748b" font-size="9">一体化制造</text>
+                        <text x="705" y="100" text-anchor="middle" fill="#c084fc" font-size="10">6G高集成</text>
+                    </svg>
+                </div>
+
                 <h4 style="color: var(--primary); margin: 20px 0 15px;">🎯 重点专利精选</h4>
                 <div class="patent-grid">
                     <!-- 专利卡片1 -->
@@ -1139,6 +1654,12 @@
                             📌 对小米的启示：华为在天线和基板领域布局最深，小米可以在FPC和毫米波封装领域寻找差异化突破点。
                         </div>
                     </div>
+
+                    <!-- 竞争格局雷达图 -->
+                    <div id="chart-competition" style="background:#f8fafc;border-radius:10px;padding:16px;margin:16px 0;height:380px;"></div>
+
+                    <!-- 申请人专利数量柱状图 -->
+                    <div id="chart-applicants" style="background:#f8fafc;border-radius:10px;padding:16px;margin:16px 0;height:320px;"></div>
 
                     <h3 style="font-size: 1.2em; color: var(--primary); margin: 25px 0 15px; padding-left: 15px; border-left: 4px solid var(--primary);">
                         4.1 申请人排名TOP10
@@ -4176,5 +4697,70 @@ TITLE-ABS-KEY(("6G" OR "IMT-2030") AND ("ISAC" OR "integrated sensing" OR "commu
             <p>© 2026 互连技术部 | 6G手机终端PCB产业链专利全景报告 | 内部资料，请勿外传</p>
         </div>
     </div>
+
+    <!-- ECharts图表 -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+    <script>
+    // 竞争格局雷达图
+    (function(){
+        var el = document.getElementById('chart-competition');
+        if(!el) return;
+        var chart = echarts.init(el);
+        chart.setOption({
+            title:{text:'六大技术领域国内外竞争力对比',left:'center',textStyle:{color:'#1e293b',fontSize:14}},
+            radar:{
+                indicator:[
+                    {name:'低损耗材料',max:100},{name:'AiP封装',max:100},{name:'玻璃基板',max:100},
+                    {name:'HDI/mSAP',max:100},{name:'封装散热',max:100},{name:'FPC/模块',max:100}
+                ],
+                axisName:{color:'#475569',fontSize:11},
+                splitArea:{areaStyle:{color:['rgba(59,130,246,0.02)','rgba(59,130,246,0.05)']}},
+                splitLine:{lineStyle:{color:'#e2e8f0'}},
+                axisLine:{lineStyle:{color:'#cbd5e1'}}
+            },
+            legend:{bottom:0,textStyle:{color:'#475569',fontSize:11},data:['中国企业','国际巨头']},
+            series:[{
+                type:'radar',
+                data:[
+                    {value:[65,45,5,75,40,70],name:'中国企业',areaStyle:{color:'rgba(239,68,68,0.15)'},lineStyle:{color:'#ef4444'},itemStyle:{color:'#ef4444'}},
+                    {value:[90,95,95,90,90,85],name:'国际巨头',areaStyle:{color:'rgba(59,130,246,0.15)'},lineStyle:{color:'#3b82f6'},itemStyle:{color:'#3b82f6'}}
+                ]
+            }]
+        });
+        window.addEventListener('resize',function(){chart.resize()});
+    })();
+
+    // 申请人专利数量柱状图
+    (function(){
+        var el = document.getElementById('chart-applicants');
+        if(!el) return;
+        var chart = echarts.init(el);
+        chart.setOption({
+            title:{text:'Top 10 申请人专利数量',left:'center',textStyle:{color:'#1e293b',fontSize:14}},
+            tooltip:{trigger:'axis',axisPointer:{type:'shadow'}},
+            grid:{left:120,right:40,top:50,bottom:30},
+            xAxis:{type:'value',axisLabel:{color:'#64748b'},splitLine:{lineStyle:{color:'#e2e8f0'}}},
+            yAxis:{type:'category',data:['AGC旭硝子','Isola','Intel','Apple','鹏鼎控股','村田','华为','生益科技','三星','深南电路'],axisLabel:{color:'#334155',fontSize:11},axisLine:{lineStyle:{color:'#e2e8f0'}}},
+            series:[{
+                type:'bar',
+                data:[
+                    {value:3,itemStyle:{color:'#64748b'}},
+                    {value:1,itemStyle:{color:'#64748b'}},
+                    {value:2,itemStyle:{color:'#64748b'}},
+                    {value:2,itemStyle:{color:'#64748b'}},
+                    {value:8,itemStyle:{color:'#ef4444'}},
+                    {value:6,itemStyle:{color:'#ef4444'}},
+                    {value:4,itemStyle:{color:'#ef4444'}},
+                    {value:9,itemStyle:{color:'#ef4444'}},
+                    {value:4,itemStyle:{color:'#3b82f6'}},
+                    {value:11,itemStyle:{color:'#ef4444'}}
+                ],
+                barWidth:18,
+                label:{show:true,position:'right',color:'#334155',fontSize:11}
+            }]
+        });
+        window.addEventListener('resize',function(){chart.resize()});
+    })();
+    </script>
 </body>
 </html>
